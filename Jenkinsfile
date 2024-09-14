@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Install Playwright Browsers') {
+            steps {
+                bat "npx playwright install" // Install the required browsers
+            }
+        }
+
         stage('Building') {
             steps {
                 echo "Building the project"
@@ -33,7 +39,7 @@ pipeline {
                     allowMissing: false, 
                     alwaysLinkToLastBuild: true, 
                     keepAll: false, 
-                    reportDir: "report", // Update this to your report directory if different
+                    reportDir: "cypress", // Update this to your report directory if different
                     reportFiles: "index.html", 
                     reportName: 'HTML Report', 
                     reportTitles: ''
