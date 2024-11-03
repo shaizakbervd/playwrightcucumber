@@ -21,12 +21,12 @@ pipeline {
             }
         }
 
-        stage('Generate Report') {
-            steps {
-                sleep time: 15, unit: 'SECONDS'
-                bat "npx ts-node generateReport.ts" // Command to generate reports
-            }
-        }
+        // stage('Generate Report') {
+        //     steps {
+        //         sleep time: 15, unit: 'SECONDS'
+        //         bat "npx ts-node generateReport.ts" // Command to generate reports
+        //     }
+        // }
 
         stage('Deploying') {
             steps {
